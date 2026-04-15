@@ -1,0 +1,8 @@
+Requirement ID,Requirement,Source Area,Mapped Tests,Priority
+REQ-PAY-001,Enable built-in and custom payment methods,Payment Settings,TC-PAY-001; TC-PAY-002; TC-PAY-003,High
+REQ-PAY-002,Integrated gateway supports portal payments,Payment Settings / Integrated Gateway,TC-PAY-010; TC-PORTAL-003,Critical
+REQ-ACCT-001,Accounting options control fiscal year and reconciliation behavior,Accounting Options,TC-ACCT-001; TC-REC-010,High
+REQ-REC-001,Reconciliation requires counted totals to match system totals,Reconciliation Overview,TC-REC-001; TC-REC-002,Critical
+REQ-SALES-001,Estimate can be converted to order with data preserved,Creating Estimate/Order,TC-SALES-001; TC-SALES-002,Critical
+REQ-CRM-001,Company and contact records link to orders,Customers,TC-CRM-001; TC-SALES-001,High
+REQ-REF-001,Refund supports full and partial refund,Integrated Gateway / Payments,TC-REF-001; TC-REF-002,Critical

@@ -1,0 +1,21 @@
+Test Case ID,Module,Scenario,Expected Result,Priority
+TC-CRM-001,CRM,Create company with valid required fields,Company details saved and searchable,High
+TC-CRM-002,CRM,Create contact linked to company,Contact linked correctly to parent company,High
+TC-SALES-001,Sales,Create estimate then convert to order,"All customer, item, price, tax data preserved",Critical
+TC-SALES-002,Sales,Apply status changes across order lifecycle,Allowed transitions work and history is recorded,High
+TC-PAY-001,Financial,Enable built-in payment method,Enabled method available during payment entry,High
+TC-PAY-002,Financial,Create custom payment method with deposit account,Custom method appears and stores to selected deposit account,High
+TC-PAY-003,Financial,Set default payment method,Default is preselected when entering payment,Medium
+TC-PAY-010,Integrations,Enable integrated processor and test connectivity,Connection test succeeds and status is online,Critical
+TC-PAY-011,Payments,Take full payment from order,Payment created and order balance becomes zero,Critical
+TC-PAY-012,Payments,Take partial payment from payments screen,Payment created and remaining balance correct,Critical
+TC-PAY-013,Payments,Attempt payment above remaining balance,System blocks or handles according to business rule,High
+TC-PORTAL-003,Customer Portal,Portal payment available only when integration enabled,Pay Now button behavior is correct,Critical
+TC-REF-001,Refunds,Initiate full refund,Payment fully refunded and balances updated,Critical
+TC-REF-002,Refunds,Initiate partial refund,Refund amount limited to available funds,Critical
+TC-ACCT-001,Accounting,Set fiscal year and display GL number,Settings persist and display reflects config,Medium
+TC-ACCT-002,Accounting,Enable unlocking of invoiced orders,Only permitted users can unlock; audit impact reviewed,High
+TC-REC-001,Reconciliation,Preview unreconciled transactions by location,Transactions appear in correct bucket,Critical
+TC-REC-002,Reconciliation,Close reconciliation when Difference = 0.00,Period closes successfully,Critical
+TC-REC-003,Reconciliation,Attempt close when Difference != 0.00,System blocks closure,Critical
+TC-REP-001,Reporting,Compare payment report to transaction records,Totals match underlying payments,High

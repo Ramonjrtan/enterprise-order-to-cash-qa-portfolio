@@ -1,0 +1,3 @@
+payment_id,order_id,payment_method,amount,status,payment_date
+PAY-10001,ORD-10001,Credit Card (Integrated Gateway),200.0,posted,2026-04-16
+PAY-10002,ORD-10001,Cash,304.0,posted,2026-04-16

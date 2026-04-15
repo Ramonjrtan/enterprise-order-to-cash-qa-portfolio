@@ -1,0 +1,135 @@
+{
+  "info": {
+    "name": "Enterprise Payments QA Collection",
+    "_postman_id": "9c11e6fd-portfolio-corebridge",
+    "description": "Sample API checks for payment and reconciliation workflows. Replace placeholder URLs and tokens before use.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/payments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "payments"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"orderId\": \"{{orderId}}\",\n  \"paymentMethod\": \"Credit Card (Integrated)\",\n  \"amount\": 100.0,\n  \"currency\": \"USD\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Get Order Payment Summary",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/orders/{{orderId}}/payments",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "orders",
+            "{{orderId}}",
+            "payments"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Initiate Refund",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/payments/{{paymentId}}/refund",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "payments",
+            "{{paymentId}}",
+            "refund"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"refundType\": \"partial\",\n  \"amount\": 25.0,\n  \"reason\": \"Portfolio QA validation\"\n}"
+        }
+      }
+    },
+    {
+      "name": "Preview Reconciliation",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/reconciliation/preview?locationId={{locationId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "reconciliation",
+            "preview"
+          ],
+          "query": [
+            {
+              "key": "locationId",
+              "value": "{{locationId}}"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.placeholder.local"
+    },
+    {
+      "key": "token",
+      "value": "replace-me"
+    },
+    {
+      "key": "orderId",
+      "value": "ORD-10001"
+    },
+    {
+      "key": "paymentId",
+      "value": "PAY-10001"
+    },
+    {
+      "key": "locationId",
+      "value": "LOC-01"
+    }
+  ]
+}
